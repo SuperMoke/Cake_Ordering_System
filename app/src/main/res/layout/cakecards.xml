@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tvcakename"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Cake Name"
+            android:textStyle="bold"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:id="@+id/ivcakeimage"
+            android:layout_width="350dp"
+            android:layout_height="194dp"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/chocolate_cake" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tvcakeprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₱ ?????"
+                android:textAppearance="?attr/textAppearanceHeadline6" />
+
+        </LinearLayout>
+
+        <!-- Buttons -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="8dp"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btnmoredetails"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="More Details" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

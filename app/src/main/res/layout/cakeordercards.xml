@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+            <TextView
+                android:id="@+id/tvusername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Customer Name: "
+                android:textSize="14dp" />
+            <TextView
+                android:id="@+id/tvcakename"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="Cake Name: "
+                android:textSize="14dp"
+                 />
+            <TextView
+                android:id="@+id/tvcakesize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="Cake Size: "
+                android:textSize="14dp"
+                />
+            <TextView
+                android:id="@+id/tvcakedecoration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cake Decoration: "
+                android:textSize="14dp"
+                />
+            <TextView
+                android:id="@+id/tvcakefrosting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cake Frosting: "
+                android:textSize="14dp"
+                />
+            <TextView
+                android:id="@+id/tvcakefilling"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cake Filling: "
+                android:textSize="14dp"
+                />
+            <TextView
+                android:id="@+id/tvspecialinstruction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Special Instruction: "
+                android:textSize="14dp"
+                />
+            <TextView
+                android:id="@+id/tvcakeprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cake Price: "
+                android:textSize="14dp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="8dp"
+        android:orientation="vertical"/>
+
+</com.google.android.material.card.MaterialCardView>

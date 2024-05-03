@@ -1,0 +1,123 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".user_cakedescription">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:liftOnScroll="true">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:menu="@menu/top_app_bar_none"
+            app:title="Aiah’s Sweet Treats" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp">
+            <ImageView
+                android:id="@+id/ivcakeimage"
+                android:layout_width="295dp"
+                android:layout_height="326dp"
+                android:layout_gravity="center"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/chocolate_cake">
+            </ImageView>
+            <TextView
+                android:id="@+id/tvcakename"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cake Name"
+                android:textSize="35dp"
+                android:textStyle="bold"
+                android:layout_marginTop="30dp">
+            </TextView>
+
+            <TextView
+                android:id="@+id/tvcakeprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₱1500"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp">
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description:"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp">
+            </TextView>
+            <TextView
+                android:id="@+id/tvcakedescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Rich and indulgent chocolate cake made with cocoa powder and topped with creamy chocolate frosting.">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calorie Count:"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp">
+            </TextView>
+            <TextView
+                android:id="@+id/tvcakecalorieaccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginTop="5dp"
+                android:text="Approximately 300 calories per slice.">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sugar Count:"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp">
+            </TextView>
+            <TextView
+                android:id="@+id/tvcakesugarcount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginTop="5dp"
+                android:text="About 25 grams of sugar per slice.">
+            </TextView>
+
+            <Button
+                android:id="@+id/btnaddtocart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:text="Add To Cart"
+                android:textSize="15dp">
+            </Button>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

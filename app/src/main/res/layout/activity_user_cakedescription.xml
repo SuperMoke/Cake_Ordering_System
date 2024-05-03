@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".user_cakedescription">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="100dp"
+        android:clipToPadding="false">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+            <ImageView
+                android:id="@+id/ivcakeimage"
+                android:layout_width="match_parent"
+                android:layout_height="326dp"
+                android:layout_gravity="center"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/chocolate_cake"></ImageView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:id="@+id/tvcakename"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chocolate Cake"
+                    android:textSize="20dp"
+                    android:textStyle="bold"></TextView>
+
+                <TextView
+                    android:id="@+id/tvcakeprice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="130dp"
+                    android:text="₱1500"
+                    android:textSize="15dp"
+                    android:textStyle="bold"></TextView>
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/tvcakedescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rich and indulgent chocolate cake made with cocoa powder and topped with creamy chocolate frosting."
+                android:textSize="14dp"></TextView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:id="@+id/tvcakecalorieaccount"
+                    android:textAlignment="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="300 calories "
+                    android:textSize="15dp"
+                    android:layout_marginRight="120dp"></TextView>
+                <TextView
+                    android:textAlignment="center"
+                    android:id="@+id/tvcakesugarcount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="25 grams sugar"
+                    android:textSize="15dp"></TextView>
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Size"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"></TextView>
+            <RadioGroup
+                android:id="@+id/radioGroupSize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/size1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="S(6 inch)"
+                    android:textSize="15dp"></RadioButton>
+
+                <RadioButton
+                    android:id="@+id/size2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="M (8 inch)"
+                    android:textSize="15dp"></RadioButton>
+
+                <RadioButton
+                    android:id="@+id/size3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="L (10 inch)"
+                    android:textSize="15dp"></RadioButton>
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Frosting"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
+
+            <CheckBox
+                android:id="@+id/frosting1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rich Chocolate Buttercream">
+            </CheckBox>
+
+            <CheckBox
+                android:id="@+id/frosting2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Decadent Chocolate Ganache">
+            </CheckBox>
+
+            <CheckBox
+                android:id="@+id/frosting3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Creamy Chocolate Mousse">
+            </CheckBox>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Decoration"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
+            <CheckBox
+                android:id="@+id/decoration1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chocolate Curls">
+            </CheckBox>
+
+            <CheckBox
+                android:id="@+id/decoration2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chocolate Sprinkles">
+            </CheckBox>
+
+            <CheckBox
+                android:id="@+id/decoration3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Edible Gold Dust">
+            </CheckBox>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fillings"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
+            <CheckBox
+                android:id="@+id/filling1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cream Cheese Filling">
+            </CheckBox>
+
+            <CheckBox
+                android:id="@+id/filling2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Whipped Cream">
+            </CheckBox>
+
+            <CheckBox
+                android:id="@+id/filling3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Raspberry Coulis">
+            </CheckBox>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Special Instruction"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Special Instruction">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/special_instruction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+        >
+
+        <Button
+            android:id="@+id/btn_add_to_cart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Add To Cart"
+            android:background="@drawable/button_box">
+        </Button>
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
