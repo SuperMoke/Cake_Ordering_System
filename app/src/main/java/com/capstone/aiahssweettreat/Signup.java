@@ -3,9 +3,11 @@ package com.capstone.aiahssweettreat;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -38,11 +40,8 @@ public class Signup extends AppCompatActivity {
         TextInputEditText addressEditText = findViewById(R.id.tvaddress);
         TextInputEditText emailEditText = findViewById(R.id.tvemail);
         TextInputEditText passwordEditText = findViewById(R.id.tvpassword);
+        TextInputEditText phonenumberEditText = findViewById(R.id.tvphonenumber);
 
-        String name = nameEditText.getText().toString().trim();
-        String address = addressEditText.getText().toString().trim();
-        String email = emailEditText.getText().toString().trim();
-        String password = passwordEditText.getText().toString().trim();
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +50,7 @@ public class Signup extends AppCompatActivity {
                 String address = addressEditText.getText().toString().trim();
                 String email = emailEditText.getText().toString().trim();
                 String password = passwordEditText.getText().toString().trim();
+                String phonenumber = phonenumberEditText.getText().toString().trim();
 
                 // Perform validation checks on the input fields
 
@@ -59,23 +59,23 @@ public class Signup extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    // User registration successful
                                     FirebaseUser user = mAuth.getCurrentUser();
                                     String userId = user.getUid();
 
-                                    // Create a new user document in Firestore
                                     Map<String, Object> userData = new HashMap<>();
+                                    userData.put("uid", userId);
                                     userData.put("name", name);
                                     userData.put("address", address);
                                     userData.put("email", email);
+                                    userData.put("phonenumber", phonenumber);
 
-                                    db.collection("users").document(userId)
-                                            .set(userData)
+                                    db.collection("users").document().set(userData)
                                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                 @Override
                                                 public void onSuccess(Void aVoid) {
-                                                    // User data saved successfully
-                                                    // Navigate to the next activity or show a success message
+                                                    Toast.makeText(Signup.this, "User created successfully", Toast.LENGTH_SHORT).show();
+                                                    Intent intent = new Intent(Signup.this, Login.class);
+                                                    startActivity(intent);
                                                 }
                                             })
                                             .addOnFailureListener(new OnFailureListener() {
@@ -85,8 +85,7 @@ public class Signup extends AppCompatActivity {
                                                 }
                                             });
                                 } else {
-                                    // User registration failed
-                                    // Show an error message
+                                    Toast.makeText(Signup.this, "User registration failed", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });

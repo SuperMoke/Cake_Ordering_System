@@ -57,6 +57,8 @@ public class user_shopping_cart extends AppCompatActivity {
             adapter = new cakeaddtocartadapter(options);
             recyclerView.setAdapter(adapter);
 
+
+
             Checkout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -71,26 +73,54 @@ public class user_shopping_cart extends AppCompatActivity {
     }
 
     private void processCheckout(String userEmail) {
-        // Iterate through each item in the RecyclerView and add order details to Firestore
-        for (int i = 0; i < adapter.getItemCount(); i++) {
-            cakeaddtocartmodel item = adapter.getItem(i);
-            if (item != null) {
-                String cakeName = item.getCakename();
-                String cakeSize = item.getCakesize();
-                String cakeDecoration = item.getDecorations();
-                String cakeFillings = item.getFillings();
-                String cakeFrostings = item.getFrostings();
-                String specialInstruction = item.getSpecialInstructions();
-                String cakePrice = item.getCakeprice();
-                addOrderToFirestore(cakeName, userEmail,cakeSize,cakeDecoration,cakeFillings,cakeFrostings,specialInstruction,cakePrice);
-            }
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser != null) {
+            firebaseFirestore.collection("users")
+                    .whereEqualTo("email", currentUser.getEmail())
+                    .get()
+                    .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                        @Override
+                        public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                            if (!queryDocumentSnapshots.isEmpty()) {
+                                for (DocumentSnapshot documentSnapshot : queryDocumentSnapshots.getDocuments()) {
+                                    String userName = documentSnapshot.getString("name");
+                                    String userAddress = documentSnapshot.getString("address");
+                                    String userPhone = documentSnapshot.getString("phonenumber");
+                                    for (int i = 0; i < adapter.getItemCount(); i++) {
+                                        cakeaddtocartmodel item = adapter.getItem(i);
+                                        if (item != null) {
+                                            String cakeName = item.getCakename();
+                                            String cakeSize = item.getCakesize();
+                                            String cakeDecoration = item.getDecorations();
+                                            String cakeFillings = item.getFillings();
+                                            String cakeFrostings = item.getFrostings();
+                                            String specialInstruction = item.getSpecialInstructions();
+                                            String cakePrice = item.getCakeprice();
+                                            addOrderToFirestore(cakeName, userEmail, cakeSize, cakeDecoration, cakeFillings, cakeFrostings, specialInstruction, cakePrice, userName, userAddress, userPhone);
+                                        }
+                                    }
+                                }
+                            } else {
+                                Log.e("user_shopping_cart", "No user found with the current email");
+                            }
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.e("user_shopping_cart", "Error retrieving user data: " + e.getMessage());
+                        }
+                    });
+        } else {
+            Log.e("user_shopping_cart", "Current user is null");
         }
     }
 
 
-    private void addOrderToFirestore(String cakeName, String userEmail, String cakeSize,String cakeDecoration,String cakeFillings, String cakeFrostings,String specialInstruction,String cakePrice) {
+
+    private void addOrderToFirestore(String cakeName, String userEmail, String cakeSize,String cakeDecoration,String cakeFillings, String cakeFrostings,String specialInstruction,String cakePrice, String userName, String userAddress, String userPhone) {
         // Add order details to Firestore in the "order" collection
-        cakeordermodel order = new cakeordermodel(cakeName, userEmail,cakeSize,cakeDecoration,cakeFillings,cakeFrostings,specialInstruction,cakePrice);
+        cakeordermodel order = new cakeordermodel(cakeName, userEmail,cakeSize,cakeDecoration,cakeFillings,cakeFrostings,specialInstruction,cakePrice,userName,userAddress,userPhone);
         firebaseFirestore.collection("orders")
                 .add(order)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {

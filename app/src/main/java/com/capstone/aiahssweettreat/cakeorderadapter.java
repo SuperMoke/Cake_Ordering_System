@@ -24,14 +24,15 @@ public class cakeorderadapter extends FirestoreRecyclerAdapter<cakeordermodel, c
 
     @Override
     protected void onBindViewHolder(@NonNull CakeViewHolder holder, int position, @NonNull cakeordermodel model) {
-        holder.useremail.setText("Customer Name: "+ model.getUseremail());
+        holder.username.setText("Customer Name: "+ model.getUsername());
+        holder.userAddress.setText("Delivery Address: " + model.getUseraddress());
+        holder.userPhone.setText("Phone Number: " + model.getUserphone());
         holder.cakeName.setText("Cake Name: "+model.getCakename());
         holder.cakeSize.setText("Cake Size: " + model.getSize());
         holder.cakeDecoration.setText("Cake Decoration: " + model.getDecoration());
         holder.cakeFilling.setText("Cake Fillings: " + model.getFillings());
         holder.cakeFrosting.setText("Cake Frostings: " + model.getFrosting());
         holder.specialInstruction.setText("Special Instruction: " + model.getSpecialInstruction());
-        holder.cakePrice.setText("Cake Decoration: " + model.getPrice());
     }
 
     @NonNull
@@ -42,12 +43,11 @@ public class cakeorderadapter extends FirestoreRecyclerAdapter<cakeordermodel, c
     }
 
     static class CakeViewHolder extends RecyclerView.ViewHolder {
-        TextView useremail,cakeName,cakeSize,cakeDecoration,cakeFrosting,cakeFilling,specialInstruction,cakePrice;
-
+        TextView username,cakeName,cakeSize,cakeDecoration,cakeFrosting,cakeFilling,specialInstruction,cakePrice,userAddress,userPhone;
 
         public CakeViewHolder(@NonNull View itemView) {
             super(itemView);
-            useremail = itemView.findViewById(R.id.tvusername);
+            username = itemView.findViewById(R.id.tvusername);
             cakeName = itemView.findViewById(R.id.tvcakename);
             cakeSize = itemView.findViewById(R.id.tvcakesize);
             cakeDecoration = itemView.findViewById(R.id.tvcakedecoration);
@@ -55,6 +55,8 @@ public class cakeorderadapter extends FirestoreRecyclerAdapter<cakeordermodel, c
             cakeFilling = itemView.findViewById(R.id.tvcakefilling);
             specialInstruction = itemView.findViewById(R.id.tvspecialinstruction);
             cakePrice = itemView.findViewById(R.id.tvcakeprice);
+            userAddress = itemView.findViewById(R.id.tvuseraddress);
+            userPhone = itemView.findViewById(R.id.tvuserphone);
         }
     }
 }

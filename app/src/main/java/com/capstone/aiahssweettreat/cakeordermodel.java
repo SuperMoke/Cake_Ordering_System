@@ -11,10 +11,14 @@ public class cakeordermodel {
     private String specialInstruction;
     private String price;
 
+    private String username;
+    private String userphone;
+    private String useraddress;
+
     public cakeordermodel() {
     }
 
-    public cakeordermodel(String cakename, String useremail,String size, String decoration, String fillings, String frosting, String specialInstruction, String price) {
+    public cakeordermodel(String cakename, String useremail,String size, String decoration, String fillings, String frosting, String specialInstruction, String price, String username, String useraddress,  String userphone) {
         this.cakename = cakename;
         this.useremail = useremail;
         this.size = size;
@@ -23,6 +27,33 @@ public class cakeordermodel {
         this.frosting = frosting;
         this.specialInstruction = specialInstruction;
         this.price = price;
+        this.username = username;
+        this.userphone = userphone;
+        this.useraddress = useraddress;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getUserphone() {
+        return userphone;
+    }
+
+    public void setUserphone(String userphone) {
+        this.userphone = userphone;
+    }
+
+    public String getUseraddress() {
+        return useraddress;
+    }
+
+    public void setUseraddress(String useraddress) {
+        this.useraddress = useraddress;
     }
 
     public String getCakename() {

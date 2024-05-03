@@ -23,6 +23,20 @@
                 android:text="Customer Name: "
                 android:textSize="14dp" />
             <TextView
+                android:id="@+id/tvuseraddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Customer Address: "
+                android:textSize="14dp" />
+            <TextView
+                android:id="@+id/tvuserphone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Customer Phone Number: "
+                android:textSize="14dp" />
+
+
+            <TextView
                 android:id="@+id/tvcakename"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -64,13 +78,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Special Instruction: "
-                android:textSize="14dp"
-                />
-            <TextView
-                android:id="@+id/tvcakeprice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cake Price: "
                 android:textSize="14dp"
                 />
         </LinearLayout>
